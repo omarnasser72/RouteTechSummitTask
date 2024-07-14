@@ -1,0 +1,1588 @@
+{
+	"info": {
+		"_postman_id": "c9232a90-38e2-4129-bd07-00a1dcd26af5",
+		"name": "Task APIs",
+		"description": "# 🚀 Get started here\n\nThis Collection contains sample requests for task managment APIs\n\n#### **It contains 3 folders each one contains it's corresponding requests**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26571473"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"omar\",\r\n    \"name\":\"omar\",\r\n    \"email\":\"omar@ma.com\",\r\n    \"password\":\"Omar1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when registration is succeded and returns a `201 Created` response code.\n\nA failed POST request occurs if **email exists** in database return `403 forbidden` with _email already exists message_.\n\nA failed POST request occurs if **username exists** in database return `403 forbidden` with _username already exists message_."
+					},
+					"response": [
+						{
+							"name": "Sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"ali\",\r\n    \"name\":\"ali\",\r\n    \"email\":\"Ali@ma.com\",\r\n    \"password\":\"Ali1234*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"user\": {\r\n        \"username\": \"ali\",\r\n        \"name\": \"ali\",\r\n        \"email\": \"Ali@ma.com\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Log In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ahmed1\",\r\n    \"password\":\"Ahmed1//\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` response code.  \nThe user successfully logged in. A failed POST request return `400 bad request` for **wrong password** and `400 bad request` when **username isn't found**."
+					},
+					"response": [
+						{
+							"name": "Log In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"ahmed1\",\r\n    \"password\":\"Ahmed1//\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"user\": {\r\n        \"_id\": \"668fdcb058d31c70b2c20e41\",\r\n        \"name\": \"ahmfdsfsed\",\r\n        \"username\": \"ahmed1\",\r\n        \"email\": \"ggbfgbfgfdf@ma.com\"\r\n    }\r\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains requests related to authentication :\n\n- **Log in**\n    \n- **Sign up**"
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"omarCat3\",\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/category",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"category"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when school is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if **name exists** in database return `400 bad request` with _category_ _name already exists message_.\n\nA failed POST request occurs if **userId** doesn't in database return `400 bad request` with _userId already exists message_."
+					},
+					"response": [
+						{
+							"name": "Add Category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"omarCat4\",\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/category",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"category\": {\r\n        \"name\": \"omarCat4\",\r\n        \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n        \"_id\": \"6693f9c753d22d0da47c373f\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ahmedCat3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/category?id=66913253f8ab726ba096b314",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66913253f8ab726ba096b314"
+								}
+							]
+						},
+						"description": "This is a PATCH request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PATCH request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PATCH request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed PATCH request occurs if the **logged user is trying to update category that isn't his** return `401 unauthorized` with _unauthorized user message._\n\nA failed PATCH request occurs if the **category id in params doesn't exist** return `401 unauthorized` with _unauthorized user message._\n\nA failed PATCH request occurs when **name already exists** in database return `400 bad request` with category name already _exists message._"
+					},
+					"response": [
+						{
+							"name": "Update Category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ahmedCat3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/category?id=66913253f8ab726ba096b314",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"category"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66913253f8ab726ba096b314"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"category\": {\r\n        \"_id\": \"66913253f8ab726ba096b314\",\r\n        \"name\": \"ahmedCat3\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/category?id=669131db8f15286415e2d50f",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "669131db8f15286415e2d50f"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request if **id doesn't exist** return a response with `400 bad request` and _category doesn't exist message_."
+					},
+					"response": [
+						{
+							"name": "Get Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/category?id=66913253f8ab726ba096b314",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"category"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66913253f8ab726ba096b314"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"category\": {\r\n        \"id\": \"66913253f8ab726ba096b314\",\r\n        \"name\": \"ahmedCat3\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/category",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"category"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_."
+					},
+					"response": [
+						{
+							"name": "Get All Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/category",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"categories\": [\n        {\n            \"_id\": \"669131db8f15286415e2d50d\",\n            \"name\": \"ahmedCat1\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\"\n        },\n        {\n            \"_id\": \"6691322f90707f565f18e7fc\",\n            \"name\": \"ahmedCat2\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\"\n        },\n        {\n            \"_id\": \"66913253f8ab726ba096b314\",\n            \"name\": \"ahmedCat3\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\"\n        },\n        {\n            \"_id\": \"6692874b5841e39ba4b4d0e6\",\n            \"name\": \"omarCat1\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\"\n        },\n        {\n            \"_id\": \"669287545841e39ba4b4d0ea\",\n            \"name\": \"omarCat2\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\"\n        },\n        {\n            \"_id\": \"669287665841e39ba4b4d0ee\",\n            \"name\": \"omarCat3\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\"\n        },\n        {\n            \"_id\": \"6693f9c753d22d0da47c373f\",\n            \"name\": \"omarCat4\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/category?id=66913196840277247a5aa180",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66913196840277247a5aa180"
+								}
+							]
+						},
+						"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific school.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no category has this id** return a response with `400 bad request` and _user doesn't exist message_."
+					},
+					"response": [
+						{
+							"name": "Delete Category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/category?id=66913253f8ab726ba096b314",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"category"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66913253f8ab726ba096b314"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"message\": \"Category ahmedCat3 has been deleted successfully.\"\r\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains requests related to managing categories:\n\n- **Add Category**\n    \n- **Update Category**\n    \n- **Get Category**\n    \n- **Get All Category**\n    \n- **Delete Category**"
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Text Task",
+					"item": [
+						{
+							"name": "Add TextTask",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"task\",\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\",\r\n    \"categoryId\":\"669287545841e39ba4b4d0ea\",\r\n    \"description\":\"dsasda\",\r\n    \"shared\":\"false\",\r\n    \"textBody\":\"dsadsadsadaas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/text",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text"
+									]
+								},
+								"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when school is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if **text task exists with the same title** in database return `400 bad request` with _text task title already exists message_.\n\nA failed POST request occurs if **userId** doesn't in database return `400 bad request` with _userId already exists message_.\n\nA failed POST request occurs if **categoryId** doesn't in database return `400 bad request` with _categoryId already exists message_.\n\nA failed POST request occurs if **logged user id doesn't match with userId in body** doesn't in database return `403 unauthorized` with _you can't use userId that isn't yours message_.\n\nA failed POST request occurs if **category doesn't belong to logged user** return `400 bad request` with _couldn't find task with catgoryId and userId already exists message._"
+							},
+							"response": [
+								{
+									"name": "Add TextTask",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\":\"task11\",\r\n    \"userId\":\"668fdcb058d31c70b2c20e41\",\r\n    \"categoryId\":\"669131db8f15286415e2d50d\",\r\n    \"description\":\"dsasda\",\r\n    \"shared\":\"false\",\r\n    \"textBody\":\"dsadsadsadaas\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/text",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"title\": \"task11\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": false,\r\n        \"type\": \"textTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"_id\": \"6693fd2cdd86732391c0e5cd\",\r\n        \"textBody\": \"dsadsadsadaas\"\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Update TextTask",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"task5\",\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/text?id=669288db7aa00c65280f2f44",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "669288db7aa00c65280f2f44"
+										}
+									]
+								},
+								"description": "This is a PATCH request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PATCH request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PATCH request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed PATCH request occurs if the **logged user is trying to update task that isn't his** return `401 unauthorized` with _unauthorized user message._\n\nA failed PATCH request occurs if the **task id in params doesn't exist** return `401 unauthorized` with _unauthorized user message._"
+							},
+							"response": [
+								{
+									"name": "Update TextTask",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\":\"task5\",\r\n    \"userId\":\"668fdcb058d31c70b2c20e41\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/text?id=6693fd2cdd86732391c0e5cd",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fd2cdd86732391c0e5cd"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"_id\": \"6693fd2cdd86732391c0e5cd\",\r\n        \"title\": \"task5\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": false,\r\n        \"type\": \"textTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"textBody\": \"dsadsadsadaas\"\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get TextTask",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/text?id=669288db7aa00c65280f2f44",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "669288db7aa00c65280f2f44"
+										}
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request if **id doesn't exist** return a response with `400 bad request` and _task doesn't exist message_."
+							},
+							"response": [
+								{
+									"name": "Get TextTask",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/text?id=6693fd2cdd86732391c0e5cd",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fd2cdd86732391c0e5cd"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"_id\": \"6693fd2cdd86732391c0e5cd\",\r\n        \"title\": \"task5\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": false,\r\n        \"type\": \"textTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"__t\": \"TextTask\",\r\n        \"textBody\": \"dsadsadsadaas\",\r\n        \"__v\": 0\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All TextTask",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/text",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text"
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_."
+							},
+							"response": [
+								{
+									"name": "Get All TextTask",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/text",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"tasks\": [\n        {\n            \"_id\": \"669288db7aa00c65280f2f44\",\n            \"title\": \"task5\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"textTask\",\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\n            \"textBody\": \"dsadsadsadaas\"\n        },\n        {\n            \"_id\": \"66929544a844de2aa9d8d0e0\",\n            \"title\": \"task3\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"textTask\",\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\n            \"textBody\": \"dsadsadsadaas\"\n        },\n        {\n            \"_id\": \"6693fd2cdd86732391c0e5cd\",\n            \"title\": \"task5\",\n            \"description\": \"dsasda\",\n            \"shared\": false,\n            \"type\": \"textTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"textBody\": \"dsadsadsadaas\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete TextTask",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/text?id=6692886b72486c2fbb96dd44",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6692886b72486c2fbb96dd44"
+										}
+									]
+								},
+								"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific school.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no task has this id** return a response with `400 bad request` and _user doesn't exist message_."
+							},
+							"response": [
+								{
+									"name": "Delete TextTask",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/text?id=6693fd2cdd86732391c0e5cd",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fd2cdd86732391c0e5cd"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"message\": \"Task task5 has been deleted successfully.\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get TextTask Using Shared Option",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shared\":\"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/text/sharedOption",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text",
+										"sharedOption"
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **category option didn't be passed** return `403 forbidden` with _couldn't find filter option message_."
+							},
+							"response": [
+								{
+									"name": "Get TextTask Using Shared Option",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shared\":\"false\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/text/sharedOption",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text",
+												"sharedOption"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"6693fd2cdd86732391c0e5cd\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"textBody\": \"dsadsadsadaas\"\r\n        }\r\n    ]\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get TextTask Using Category Option",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\":\"omarCat3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/text/categoryOption",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"text",
+										"categoryOption"
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **category option didn't be passed** return `403 forbidden` with _couldn't find filter option message_."
+							},
+							"response": [
+								{
+									"name": "Get TextTask Using Category Option",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"categoryName\":\"ahmedCat1\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/text/categoryOption",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"text",
+												"categoryOption"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"6693fd2cdd86732391c0e5cd\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"textBody\": \"dsadsadsadaas\"\r\n        }\r\n    ]\r\n}"
+								}
+							]
+						}
+					],
+					"description": "This folder contains requests related to managing text task:\n\n- **Add TextTask**\n    \n- **Update TextTask**\n    \n- **Get TextTask**\n    \n- **Get All TextTask**\n    \n- **Delete TextTask**"
+				},
+				{
+					"name": "List Task",
+					"item": [
+						{
+							"name": "Add ListTask",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"task8\",\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\",\r\n    \"categoryId\":\"6692874b5841e39ba4b4d0e6\",\r\n    \"description\":\"dsasda\",\r\n    \"shared\":\"true\",\r\n    \"items\":[\r\n        {\"textBody\":\"taskBody1\"},\r\n        {\"textBody\":\"taskBody2\"}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/list",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list"
+									]
+								},
+								"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when school is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if **text task exists with the same title** in database return `400 bad request` with _text task title already exists message_.\n\nA failed POST request occurs if **userId** doesn't in database return `400 bad request` with _userId already exists message_.\n\nA failed POST request occurs if **categoryId** doesn't in database return `400 bad request` with _categoryId already exists message_.\n\nA failed POST request occurs if **logged user id doesn't match with userId in body** doesn't in database return `403 unauthorized` with _you can't use userId that isn't yours message_.\n\nA failed POST request occurs if **category doesn't belong to logged user** return `400 bad request` with _couldn't find task with catgoryId and userId already exists message._"
+							},
+							"response": [
+								{
+									"name": "Add ListTask",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\":\"task9\",\r\n    \"userId\":\"668fdcb058d31c70b2c20e41\",\r\n    \"categoryId\":\"669131db8f15286415e2d50d\",\r\n    \"description\":\"dsasda\",\r\n    \"shared\":\"true\",\r\n    \"items\":[\r\n        {\"textBody\":\"taskBody1\"},\r\n        {\"textBody\":\"taskBody2\"}\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/list",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"title\": \"task9\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": true,\r\n        \"type\": \"listTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"_id\": \"6693fecbdd86732391c0e5dc\",\r\n        \"items\": [\r\n            {\r\n                \"textBody\": \"taskBody1\",\r\n                \"_id\": \"6693fecbdd86732391c0e5dd\"\r\n            },\r\n            {\r\n                \"textBody\": \"taskBody2\",\r\n                \"_id\": \"6693fecbdd86732391c0e5de\"\r\n            }\r\n        ]\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Update ListTask",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"task5\",\r\n    \"items\":[\r\n        {\"textBody\":\"taskBody56\"},\r\n        {\"textBody\":\"taskBody2\"}\r\n    ],\r\n    \"userId\":\"669286f65841e39ba4b4d0e1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/list?id=6692c36dd8e528a94a73070f",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6692c36dd8e528a94a73070f"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update ListTask",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\":\"task5\",\r\n    \"items\":[\r\n        {\"textBody\":\"taskBody56\"},\r\n        {\"textBody\":\"taskBody2\"}\r\n    ],\r\n    \"userId\":\"668fdcb058d31c70b2c20e41\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/list?id=6693fecbdd86732391c0e5dc",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fecbdd86732391c0e5dc"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"_id\": \"6693fecbdd86732391c0e5dc\",\r\n        \"title\": \"task5\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": true,\r\n        \"type\": \"listTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"items\": [\r\n            {\r\n                \"textBody\": \"taskBody56\",\r\n                \"_id\": \"6693ff17dd86732391c0e5e4\"\r\n            },\r\n            {\r\n                \"textBody\": \"taskBody2\",\r\n                \"_id\": \"6693ff17dd86732391c0e5e5\"\r\n            }\r\n        ]\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get ListTask",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/list?id=669131db8f15286415e2d50f",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "669131db8f15286415e2d50f"
+										}
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request if **id doesn't exist** return a response with `400 bad request` and _task doesn't exist message_."
+							},
+							"response": [
+								{
+									"name": "Get ListTask",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/list?id=6693fecbdd86732391c0e5dc",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fecbdd86732391c0e5dc"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"task\": {\r\n        \"_id\": \"6693fecbdd86732391c0e5dc\",\r\n        \"title\": \"task5\",\r\n        \"description\": \"dsasda\",\r\n        \"shared\": true,\r\n        \"type\": \"listTask\",\r\n        \"categoryId\": \"669131db8f15286415e2d50d\",\r\n        \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n        \"__t\": \"ListTask\",\r\n        \"items\": [\r\n            {\r\n                \"textBody\": \"taskBody56\",\r\n                \"_id\": \"6693ff17dd86732391c0e5e4\"\r\n            },\r\n            {\r\n                \"textBody\": \"taskBody2\",\r\n                \"_id\": \"6693ff17dd86732391c0e5e5\"\r\n            }\r\n        ],\r\n        \"__v\": 0\r\n    }\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All ListTask",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/list",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All ListTask",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/list",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"66939d915622d5750aa0e007\",\r\n            \"title\": \"task1\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d915622d5750aa0e008\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d915622d5750aa0e009\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939d995622d5750aa0e00e\",\r\n            \"title\": \"task2\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d995622d5750aa0e00f\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d995622d5750aa0e010\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939d9e5622d5750aa0e015\",\r\n            \"title\": \"task3\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e016\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e017\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939da55622d5750aa0e01c\",\r\n            \"title\": \"task4\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939da55622d5750aa0e01d\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939da55622d5750aa0e01e\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939dae5622d5750aa0e023\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939dae5622d5750aa0e024\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939dae5622d5750aa0e025\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939db25622d5750aa0e02a\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939db25622d5750aa0e02b\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939db25622d5750aa0e02c\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939e8d42637cd8261885d7\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e8d42637cd8261885d8\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e8d42637cd8261885d9\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939e9442637cd8261885de\",\r\n            \"title\": \"task7\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9442637cd8261885df\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9442637cd8261885e0\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939e9942637cd8261885e5\",\r\n            \"title\": \"task8\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9942637cd8261885e6\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9942637cd8261885e7\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"6693fecbdd86732391c0e5dc\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody56\",\r\n                    \"_id\": \"6693ff17dd86732391c0e5e4\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"6693ff17dd86732391c0e5e5\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete ListTask",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task/list?id=6692c36dd8e528a94a73070f",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6692c36dd8e528a94a73070f"
+										}
+									]
+								},
+								"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific school.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **token** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no task has this id** return a response with `400 bad request` and _user doesn't exist message_."
+							},
+							"response": [
+								{
+									"name": "Delete ListTask",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:6666/task/list?id=6693fecbdd86732391c0e5dc",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "6693fecbdd86732391c0e5dc"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"message\": \"Task task5 has been deleted successfully.\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get TextTask Using Shared Option",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shared\":\"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/list/sharedOption",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list",
+										"sharedOption"
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **category option didn't be passed** return `403 forbidden` with _couldn't find filter option message_."
+							},
+							"response": [
+								{
+									"name": "Get TextTask Using Shared Option",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shared\":\"false\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/list/sharedOption",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list",
+												"sharedOption"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"66939d915622d5750aa0e007\",\r\n            \"title\": \"task1\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d915622d5750aa0e008\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d915622d5750aa0e009\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939d995622d5750aa0e00e\",\r\n            \"title\": \"task2\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d995622d5750aa0e00f\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d995622d5750aa0e010\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"_id\": \"66939d9e5622d5750aa0e015\",\r\n            \"title\": \"task3\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e016\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e017\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Get TextTask Using Category Option",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\":\"important2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:6666/task/list/categoryOption",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task",
+										"list",
+										"categoryOption"
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **category option didn't be passed** return `403 forbidden` with _couldn't find filter option message_."
+							},
+							"response": [
+								{
+									"name": "Get TextTask Using Category Option",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"categoryName\":\"ahmedCat1\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:6666/task/list/categoryOption",
+											"host": [
+												"localhost"
+											],
+											"port": "6666",
+											"path": [
+												"task",
+												"list",
+												"categoryOption"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"tasks\": [\n        {\n            \"_id\": \"66939d915622d5750aa0e007\",\n            \"title\": \"task1\",\n            \"description\": \"dsasda\",\n            \"shared\": false,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939d915622d5750aa0e008\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939d915622d5750aa0e009\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"66939d995622d5750aa0e00e\",\n            \"title\": \"task2\",\n            \"description\": \"dsasda\",\n            \"shared\": false,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939d995622d5750aa0e00f\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939d995622d5750aa0e010\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"66939d9e5622d5750aa0e015\",\n            \"title\": \"task3\",\n            \"description\": \"dsasda\",\n            \"shared\": false,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939d9e5622d5750aa0e016\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939d9e5622d5750aa0e017\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"66939da55622d5750aa0e01c\",\n            \"title\": \"task4\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939da55622d5750aa0e01d\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939da55622d5750aa0e01e\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"66939dae5622d5750aa0e023\",\n            \"title\": \"task5\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939dae5622d5750aa0e024\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939dae5622d5750aa0e025\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"66939db25622d5750aa0e02a\",\n            \"title\": \"task6\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody1\",\n                    \"_id\": \"66939db25622d5750aa0e02b\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"66939db25622d5750aa0e02c\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"6693fecbdd86732391c0e5dc\",\n            \"title\": \"task5\",\n            \"description\": \"dsasda\",\n            \"shared\": true,\n            \"type\": \"listTask\",\n            \"categoryId\": \"669131db8f15286415e2d50d\",\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\n            \"items\": [\n                {\n                    \"textBody\": \"taskBody56\",\n                    \"_id\": \"6693ff17dd86732391c0e5e4\"\n                },\n                {\n                    \"textBody\": \"taskBody2\",\n                    \"_id\": \"6693ff17dd86732391c0e5e5\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Sorting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/task?order=asc&sortKey=shared",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "sortKey",
+									"value": "shared"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **token doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **order or sortkey options didn't be passed** return `403 forbidden` with _couldn't sort message_."
+					},
+					"response": [
+						{
+							"name": "Sorting using shared",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task?order=asc&sortKey=shared",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "asc"
+										},
+										{
+											"key": "sortKey",
+											"value": "shared"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"66939d915622d5750aa0e007\",\r\n            \"title\": \"task1\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d915622d5750aa0e008\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d915622d5750aa0e009\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939d995622d5750aa0e00e\",\r\n            \"title\": \"task2\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d995622d5750aa0e00f\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d995622d5750aa0e010\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939d9e5622d5750aa0e015\",\r\n            \"title\": \"task3\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": false,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e016\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939d9e5622d5750aa0e017\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"669288db7aa00c65280f2f44\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"TextTask\",\r\n            \"textBody\": \"dsadsadsadaas\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66929544a844de2aa9d8d0e0\",\r\n            \"title\": \"task3\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"TextTask\",\r\n            \"textBody\": \"dsadsadsadaas\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939da55622d5750aa0e01c\",\r\n            \"title\": \"task4\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939da55622d5750aa0e01d\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939da55622d5750aa0e01e\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939dae5622d5750aa0e023\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939dae5622d5750aa0e024\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939dae5622d5750aa0e025\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939db25622d5750aa0e02a\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939db25622d5750aa0e02b\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939db25622d5750aa0e02c\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939e8d42637cd8261885d7\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e8d42637cd8261885d8\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e8d42637cd8261885d9\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939e9442637cd8261885de\",\r\n            \"title\": \"task7\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9442637cd8261885df\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9442637cd8261885e0\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66939e9942637cd8261885e5\",\r\n            \"title\": \"task8\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"__t\": \"ListTask\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9942637cd8261885e6\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9942637cd8261885e7\"\r\n                }\r\n            ],\r\n            \"__v\": 0\r\n        }\r\n    ]\r\n}"
+						},
+						{
+							"name": "Sorting using category name",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:6666/task?order=asc&sortKey=categoryName",
+									"host": [
+										"localhost"
+									],
+									"port": "6666",
+									"path": [
+										"task"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "asc"
+										},
+										{
+											"key": "sortKey",
+											"value": "categoryName"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"tasks\": [\r\n        {\r\n            \"_id\": \"66939da55622d5750aa0e01c\",\r\n            \"title\": \"task4\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939da55622d5750aa0e01d\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939da55622d5750aa0e01e\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"ahmedCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"66939dae5622d5750aa0e023\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939dae5622d5750aa0e024\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939dae5622d5750aa0e025\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"ahmedCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"66939db25622d5750aa0e02a\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"669131db8f15286415e2d50d\",\r\n            \"userId\": \"668fdcb058d31c70b2c20e41\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939db25622d5750aa0e02b\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939db25622d5750aa0e02c\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"ahmedCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"66939e8d42637cd8261885d7\",\r\n            \"title\": \"task6\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e8d42637cd8261885d8\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e8d42637cd8261885d9\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"omarCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"66939e9442637cd8261885de\",\r\n            \"title\": \"task7\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9442637cd8261885df\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9442637cd8261885e0\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"omarCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"66939e9942637cd8261885e5\",\r\n            \"title\": \"task8\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"listTask\",\r\n            \"categoryId\": \"6692874b5841e39ba4b4d0e6\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"items\": [\r\n                {\r\n                    \"textBody\": \"taskBody1\",\r\n                    \"_id\": \"66939e9942637cd8261885e6\"\r\n                },\r\n                {\r\n                    \"textBody\": \"taskBody2\",\r\n                    \"_id\": \"66939e9942637cd8261885e7\"\r\n                }\r\n            ],\r\n            \"categoryName\": \"omarCat1\"\r\n        },\r\n        {\r\n            \"_id\": \"669288db7aa00c65280f2f44\",\r\n            \"title\": \"task5\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"textBody\": \"dsadsadsadaas\",\r\n            \"categoryName\": \"omarCat3\"\r\n        },\r\n        {\r\n            \"_id\": \"66929544a844de2aa9d8d0e0\",\r\n            \"title\": \"task3\",\r\n            \"description\": \"dsasda\",\r\n            \"shared\": true,\r\n            \"type\": \"textTask\",\r\n            \"categoryId\": \"669287665841e39ba4b4d0ee\",\r\n            \"userId\": \"669286f65841e39ba4b4d0e1\",\r\n            \"textBody\": \"dsadsadsadaas\",\r\n            \"categoryName\": \"omarCat3\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains 2 folders:\n\n- **Text Task**\n    \n- **List Task**\n    \n\nSorting API"
+		}
+	]
+}
